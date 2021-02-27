@@ -2,14 +2,16 @@ import Link from 'next/link';
 
 const Navbar = () => {
   return (
-        <nav>
-            <div className="logo">
-                <h1>Ease My Bill</h1>
+        <nav className="row align-items-center">
+            <div className="logo col-md-6">
+                <h1>Ease-My-Bill</h1>
             </div>
-            <Link href="/"><a>Home</a></Link>
-            <Link href="/about"><a>About</a></Link>
-            <Link href="/dashboard"><a>Dashboard</a></Link>
-            <Link href="/login/"><a>Login</a></Link>
+            <ul className="col-md-6 nav align-items-center justify-content-end">
+                <li class="nav-item"><Link href="/"><a class="nav-link">HOME</a></Link></li>
+                <li class="nav-item"><Link href="/about"><a class="nav-link">ABOUT</a></Link></li>
+                <li class="nav-item"><Link href="/dashboard"><a class="nav-link">DASHBOARD</a></Link></li>
+                <li class="nav-item"><Link href="/login/"><a class="nav-link">LOGIN</a></Link></li>
+            </ul>
         </nav>
     );
 }
