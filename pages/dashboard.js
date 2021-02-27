@@ -4,6 +4,7 @@ import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import initFirebase from '../services/firebase';
 import 'firebase/firestore';
+import Button from '../components/Button';
 
 const Dashboard = () => {
     
@@ -46,13 +47,20 @@ const Dashboard = () => {
     
 
     return (
-        <>
-            {user.email}
-            <p>Dashboard</p>
-            
-        </>
+        <div>
+            <div>
+                <h1>Transaction History</h1>
+                <button>
+                    {/* Generate a Bill and Post to firebase */}
+                </button>
+            </div>
+            <div>
+                <h1>Bills</h1>
+                {/* get data from firebase add 2 buttons create bill and pay bill*/}
+                <Button amount={amount}></Button>
+            </div>
+        </div>
     );
 }
  
 export default Dashboard;
-
