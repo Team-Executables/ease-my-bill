@@ -1,10 +1,9 @@
-import { sendEmail } from '../../utils/sendEmail';
+import { sendEmail } from '../../services/sendEmail';
 
 export default async (req, res) => {
     if(req.method === 'POST') {
-      // const { name, email, subject, value(bill, payment success, greeting), from_name}
-      const { name, email } = req.body;
-      await sendEmail({ name, email });
+      const { from_name, name, email, subject, value } = req.body;
+      await sendEmail(from_name, name, email, subject, value);
       return res.status(200).end();
     }
     return res.status(404).json({
