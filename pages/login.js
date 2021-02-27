@@ -3,11 +3,10 @@ import 'firebase/firestore';
 import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 //import { useCollectionData } from 'react-firebase-hooks/firestore';
-import initFirebase from 'services/firebase';
+import initFirebase from '../services/firebase';
 import Dashboard from './Dashboard';
 
 initFirebase();
-
 const auth = firebase.auth();
 //const firestore = firebase.firestore();
 
