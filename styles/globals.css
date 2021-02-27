@@ -4,6 +4,7 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  height: 100%;
 }
 
 a {
@@ -79,4 +80,47 @@ footer{
   padding: 20px;
   background-color: #284b63;
   color: #ffffff;
+  font-size: large;
+}
+
+#about div{
+  padding: 12.5% 10px;
+  font-size: x-large;
+}
+
+#about div a{
+  color: #3c6e71;
+}
+
+#about div a:hover{
+  text-decoration: underline;
+}
+
+#login img{
+  width: 100%;
+}
+
+.login-bg{
+  position: relative;
+}
+
+.login-bg section{
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  width: 200px;
+  margin-left: -100px;
+}
+
+.login-bg section button{
+  padding: 10px 20px;
+  background-color: #3c6e71;
+  color: white;
+  box-shadow: 1px 10px 25px #ffffff;
+  border: 0;
+}
+
+.login-bg section button:hover{
+  outline: none;
+  box-shadow: 0.4px 2px 5px #ffffff;
 }

@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 //import { useCollectionData } from 'react-firebase-hooks/firestore';
 import initFirebase from '../services/firebase';
 import Dashboard from './dashboard';
+import Head from 'next/head'
 
 initFirebase();
 const auth = firebase.auth();
@@ -16,16 +17,23 @@ function App() {
   const [user] = useAuthState(auth);
 
   return (
-    <div className="App">
-      <header>
-        <h1>🔥</h1>
-        <SignOut />
-      </header>
-
-      <section>
-        {user ? <Dashboard/> : <SignIn />}
-      </section>
-
+    <div>
+      <Head>
+          <title>Ease My Bill - Login</title>
+          <link rel="icon" href="/favicon.ico" />
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossOrigin="anonymous" />
+      </Head>
+      <div className="App" id="login">
+        <main>
+          <div class="login-bg">
+            <img src="/login-back.jpg" alt="Login Page"/>
+            <section>
+              <SignOut />
+              {user ? <Dashboard/> : <SignIn />}
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
   );
 }

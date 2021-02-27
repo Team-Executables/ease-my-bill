@@ -29,9 +29,9 @@ export default function Home() {
           <div className="col-md-4 card-holder">
             <div className="card">
               <img src="/database.jpg" alt="Store Data" className="card-img-top"/>
-              <div class="card-body">
-                <h5 class="card-title">Easy To Use</h5>
-                <p class="card-text">
+              <div className="card-body">
+                <h5 className="card-title">Easy To Use</h5>
+                <p className="card-text">
                   Maintain record of consumers in one go. Upload a CSV/Excel or make entries.
                 </p>
               </div>
@@ -40,9 +40,9 @@ export default function Home() {
           <div className="col-md-4 card-holder">
             <div className="card">
               <img src="/razorpay.jfif" alt="Razorpay" className="card-img-top"/>
-              <div class="card-body">
-                <h5 class="card-title">Powered By RazorPay</h5>
-                <p class="card-text">
+              <div className="card-body">
+                <h5 className="card-title">Powered By RazorPay</h5>
+                <p className="card-text">
                   Use one of the safest, fastest and reliable payment systems in India: RazorPay
                 </p>
               </div>
@@ -51,9 +51,9 @@ export default function Home() {
           <div className="col-md-4 card-holder">
             <div className="card">
               <img src="/money.jpg" alt="No Cost" className="card-img-top"/>
-              <div class="card-body">
-                <h5 class="card-title">Zero Cost</h5>
-                <p class="card-text">
+              <div className="card-body">
+                <h5 className="card-title">Zero Cost</h5>
+                <p className="card-text">
                   Amazing features like Maintaining Records and Daily Reminders at absolutely zero cost.
                 </p>
               </div>
