@@ -4,7 +4,7 @@ import 'firebase/auth';
 import { useAuthState } from 'react-firebase-hooks/auth';
 //import { useCollectionData } from 'react-firebase-hooks/firestore';
 import initFirebase from '../services/firebase';
-import Dashboard from './Dashboard';
+import Dashboard from './dashboard';
 
 initFirebase();
 const auth = firebase.auth();
