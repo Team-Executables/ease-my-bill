@@ -43,7 +43,7 @@ const Dashboard = () => {
           console.error("Error writing document: ", error);
       });
 
-      
+      const amount = 69
     
 
     return (
@@ -57,7 +57,7 @@ const Dashboard = () => {
             <div>
                 <h1>Bills</h1>
                 {/* get data from firebase add 2 buttons create bill and pay bill*/}
-                <Button amount={amount}></Button>
+                <Button amount={amount} user={user}></Button>
             </div>
         </div>
     );
