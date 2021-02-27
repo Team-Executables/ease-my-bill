@@ -3,7 +3,8 @@ import fetch from 'node-fetch'
 const SENDGRID_API = 'https://api.sendgrid.com/v3/mail/send'
 
 //value(bill, payment success, greeting)
-const sendEmail = async ({ from_name, name, email, subject, value }) => {
+const sendEmail = async ({ from_name, email, template }) => {
+    console.log(from_name, email, template)
     await fetch(SENDGRID_API, {
         method: 'POST',
         headers: {
@@ -17,20 +18,14 @@ const sendEmail = async ({ from_name, name, email, subject, value }) => {
                 {
                   email
                 }
-              ],
-              subject: `${subject}`
+              ]
             }
           ],
           from: {
             email: 'anuragsanjay502@gmail.com',
             name: `${from_name}`
           },
-          content: [
-            {
-              type: 'text/html',
-              value: `To ${name} <br> ${value}`
-            }
-          ]
+          template_id: template
         })
     });
 }
