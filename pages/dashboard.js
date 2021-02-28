@@ -57,7 +57,7 @@ const Dashboard = () => {
             <div>
                 <h1>Bills</h1>
                 {/* get data from firebase add 2 buttons create bill and pay bill*/}
-                <Button amount={amount} user={user}></Button>
+                <Button amount={amount} uid={user.uid} email={user.email} ></Button>
             </div>
         </div>
     );

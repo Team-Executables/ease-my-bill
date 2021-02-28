@@ -25,6 +25,9 @@ export default async (req, res) => {
       razorpayPaymentId,
       razorpayOrderId,
       razorpaySignature,
+      uid,
+      email,
+      amt
     } = req.body;
 
     const shasum = crypto.createHmac('sha256', process.env.RAZORPAY_SECRET);
@@ -46,40 +49,34 @@ export default async (req, res) => {
   
     //firebase save
 
-    db.collection('payments').doc(`123`).set({
-      email: "sa.anuragsingh@gmail.com",
+    db.collection('payments').doc(`${uid}`).set({
+      email: email,
       orderId: razorpayOrderId,
       paymentId: razorpayPaymentId,
       signature: razorpaySignature,
+      amount: amt
     })
     .then(() => {
       console.log("Transaction success");
     })
-    .then(() => {
-          fetch('/api/send-email', {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json' },
-              body: JSON.stringify({ from_name: 'Ease My Bill', email: 'sa.anuragsingh@gmail.com', template: 'd-0dfe75fa777d4b698973b7bb2ba80b9a' })
-          });
+    // .then(() => {
+    //       fetch('/api/send-email', {
+    //           method: 'POST',
+    //           headers: { 'Content-Type': 'application/json' },
+    //           body: JSON.stringify({ from_name: 'Ease My Bill', email: email, template: 'd-0dfe75fa777d4b698973b7bb2ba80b9a' })
+    //       });
       
-    })
-    .then(() => {
-      res.json({
-          msg: 'success',
-          orderId: razorpayOrderId,
-          paymentId: razorpayPaymentId,
-        });
-    })
+    // })
     .catch((error) => {
         console.error("Error writing document: ", error);
     });
 
 
-    // res.json({
-    //   msg: 'success',
-    //   orderId: razorpayOrderId,
-    //   paymentId: razorpayPaymentId,
-    // });
+    res.json({
+      msg: 'success',
+      orderId: razorpayOrderId,
+      paymentId: razorpayPaymentId,
+    });
 
     return res.status(200).end();
   }

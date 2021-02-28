@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const Button = ({ amount, user }) => {
+const Button = ({ amount, uid, email }) => {
 
         function loadScript(src) {
             return new Promise((resolve) => {
@@ -54,6 +54,9 @@ const Button = ({ amount, user }) => {
                     razorpayPaymentId: response.razorpay_payment_id,
                     razorpayOrderId: response.razorpay_order_id,
                     razorpaySignature: response.razorpay_signature,
+                    uid: uid,
+                    email: email,
+                    amt: amt
                 };
 
                 const result = await axios.post("/api/success", data);
