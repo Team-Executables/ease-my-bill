@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import initFirebase from '../services/firebase';
 import Dashboard from './dashboard';
 import Head from 'next/head'
+import { useRouter } from 'next/router'
 
 initFirebase();
 const auth = firebase.auth();
@@ -53,8 +54,15 @@ function SignIn() {
 }
 
 function SignOut() {
+  const router = useRouter()
+
+  const handlepress = () => {
+    auth.signOut()
+    router.push('/')
+  }
+
   return auth.currentUser && (
-    <button className="sign-out" onClick={() => auth.signOut()}>Sign Out</button>
+    <button className="sign-out" onClick={handlepress}>Sign Out</button>
   )
 }
 
