@@ -36,7 +36,7 @@ const Dashboard = () => {
             fetch('/api/send-email', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ from_name: 'Ease My Bill', email: user.email, template: 'd-0dfe75fa777d4b698973b7bb2ba80b9a' })
+                body: JSON.stringify({ from_name: 'Ease My Bill', email: user.email, template: 'd-a1634fe9aa94456abf0587f1379fb045' })
             });
         }
       })
@@ -63,7 +63,7 @@ const Dashboard = () => {
             <div>
                 <h1>Bills</h1>
                 {/* get data from firebase add 2 buttons create bill and pay bill*/}
-                <Button amount={amount} user={user}></Button>
+                <Button amount={amount} uid={user.uid} email={user.email} ></Button>
             </div>
             <div>
                 <h1>Create Bill</h1>
