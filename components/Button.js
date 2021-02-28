@@ -82,11 +82,9 @@ const Button = ({ amount, user }) => {
     }
 
     return (
-        <section>
-            <button onClick={displayRazorpay}>
-                Pay ₹{amount}
-            </button>
-        </section>
+        <button onClick={displayRazorpay}>
+            Pay ₹{amount}
+        </button>
     );
 }
  

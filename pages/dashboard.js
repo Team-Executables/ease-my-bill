@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import initFirebase from '../services/firebase';
 import 'firebase/firestore';
 import Button from '../components/Button';
+import CreateBill from "../components/CreateBill";
 
 const Dashboard = () => {
     
@@ -43,11 +44,16 @@ const Dashboard = () => {
           console.error("Error writing document: ", error);
       });
 
+
+    //   const getBills = async() => {
+    //     const user_doc = await db.collection('bills').doc(user.uid).get();
+    //   }
+
       const amount = 69
     
 
     return (
-        <div>
+        <div id="dashboard">
             <div>
                 <h1>Transaction History</h1>
                 <button>
@@ -58,6 +64,11 @@ const Dashboard = () => {
                 <h1>Bills</h1>
                 {/* get data from firebase add 2 buttons create bill and pay bill*/}
                 <Button amount={amount} user={user}></Button>
+            </div>
+            <div>
+                <h1>Create Bill</h1>
+                {/* get data from firebase add 2 buttons create bill and pay bill*/}
+                <CreateBill user={user.uid}></CreateBill>
             </div>
         </div>
     );

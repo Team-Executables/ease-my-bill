@@ -26,7 +26,6 @@ function App() {
       <div className="App" id="login">
         <main>
           <div class="login-bg">
-            <img src="/login-back.jpg" alt="Login Page"/>
             <section>
               <SignOut />
               {user ? <Dashboard/> : <SignIn />}
