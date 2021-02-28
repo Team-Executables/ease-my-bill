@@ -22,10 +22,10 @@ const sendEmail = async ({ from_name, email, template }) => {
             }
           ],
           from: {
-            email: 'anuragsanjay502@gmail.com',
+            email: 'sa.anuragsingh@gmail.com',
             name: `${from_name}`
           },
-          template_id: template
+          template_id: `${template}`
         })
     });
 }

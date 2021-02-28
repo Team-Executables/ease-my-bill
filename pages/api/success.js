@@ -3,6 +3,7 @@ const crypto = require('crypto');
 import firebase from 'firebase/app';
 import initFirebase from '../../services/firebase';
 import 'firebase/firestore';
+import fetch from 'node-fetch'
 
   initFirebase();
   const db = firebase.firestore();
@@ -59,14 +60,15 @@ export default async (req, res) => {
     .then(() => {
       console.log("Transaction success");
     })
-    // .then(() => {
-    //       fetch('/api/send-email', {
-    //           method: 'POST',
-    //           headers: { 'Content-Type': 'application/json' },
-    //           body: JSON.stringify({ from_name: 'Ease My Bill', email: email, template: 'd-0dfe75fa777d4b698973b7bb2ba80b9a' })
-    //       });
+    .then(async () => {
+        const temp = 'd-520b08a404a842699caf182c3d65a509'
+          await fetch('http://localhost:3000/api/send-email', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ from_name: 'Ease My Bill', email: email, template: temp})
+          });
       
-    // })
+    })
     .catch((error) => {
         console.error("Error writing document: ", error);
     });
